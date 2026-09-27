@@ -48,6 +48,7 @@
 #include "Common/BuildAssistant.h"
 #include "Common/Recorder.h"
 #include "Common/SpecialPower.h"
+#include "Common/WinPredictorExport.h"
 
 #include "GameClient/Anim2D.h"
 #include "GameClient/ControlBar.h"
@@ -3807,6 +3808,8 @@ void InGameUI::postWindowDraw()
 	{
 		drawPlayerInfoList();
 	}
+	
+	WinPredictor::drawOverlay();
 }
 
 //-------------------------------------------------------------------------------------------------

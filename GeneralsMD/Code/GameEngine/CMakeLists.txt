@@ -128,6 +128,7 @@ set(GAMEENGINE_SRC
 #    Include/Common/UserPreferences.h
 #    Include/Common/version.h
     Include/Common/WellKnownKeys.h
+	Include/Common/WinPredictorExport.h
 #    Include/Common/WorkerProcess.h
 #    Include/Common/Xfer.h
 #    Include/Common/XferCRC.h
@@ -675,6 +676,7 @@ set(GAMEENGINE_SRC
 #    Source/Common/Thing/ThingTemplate.cpp
 #    Source/Common/UserPreferences.cpp
 #    Source/Common/version.cpp
+	Source/Common/WinPredictorExport.cpp
 #    Source/Common/WorkerProcess.cpp
 #    Source/GameClient/ClientInstance.cpp
 #    Source/GameClient/Color.cpp

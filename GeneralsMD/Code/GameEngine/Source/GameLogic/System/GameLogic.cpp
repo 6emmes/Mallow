@@ -55,6 +55,7 @@
 #include "Common/ThingFactory.h"
 #include "Common/Team.h"
 #include "Common/ThingTemplate.h"
+#include "Common/WinPredictorExport.h"
 #include "GameClient/Water.h"
 #include "GameClient/Snow.h"
 #include "Common/WellKnownKeys.h"
@@ -449,6 +450,7 @@ void GameLogic::reset()
 	TheTerrainLogic->reset();
 	TheAI->reset();
 	TheScriptEngine->reset();
+	WinPredictor::endMatch();
 
 	m_CRC = 0;
 	for(Int i = 0; i < MAX_SLOTS; ++i)
@@ -2638,6 +2640,7 @@ void GameLogic::processCommandList( CommandList *list )
 #ifdef RTS_DEBUG
 		DEBUG_ASSERTCRASH(msg != nullptr && msg != (GameMessage*)0xdeadbeef, ("bad msg"));
 #endif
+		WinPredictor::countCommand( msg );
 		logicMessageDispatcher( msg, nullptr );
 	}
 
@@ -3790,6 +3793,8 @@ void GameLogic::update()
 	{
 		TheStatsCollector->update();
 	}
+
+	WinPredictor::update();
 
 	// Update the Recorder
 	{

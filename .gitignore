@@ -67,3 +67,5 @@ build.ninja
 ## Python
 __pycache__/
 *.pyc
+/Mallow/pkl
+/Mallow/tests
